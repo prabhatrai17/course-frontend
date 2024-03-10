@@ -1,0 +1,31 @@
+
+<div class="container-grid">
+    <div class="container-grid-row-1"> 
+        <app-filter-and-view-row></app-filter-and-view-row>
+    </div>
+    <div class="container-grid-row-2">
+<mat-card class="card" *ngFor="let course of courseArr">
+    <mat-card-header>
+        <strong>{{course.courseName}}</strong>
+    </mat-card-header>
+    <mat-card-content>
+        By UserId: <small>{{course.courseBy}}</small><br>
+        {{course.courseDesc}}<br>
+        Price: {{course.coursePrice}}<br>
+        Category: {{course.category}}<br>
+        Level: {{course.courseDifficulty}}<br>
+        Duration: {{course.courseDuration}} Hrs<br>
+       
+        Created On: {{course.courseDate}}
+
+    </mat-card-content>
+    <mat-card-footer>
+        <div class="card-btns">
+        <button class="btn1" mat-button color="primary" routerLink="/dashboard/viewcourse" (click)="handleViewCourse(course.courseId)">More Info</button>
+        <button class="btn2" mat-flat-button color="accent" routerLink="/cart">Add to Cart</button>
+    </div>
+    </mat-card-footer>
+</mat-card>
+<!-- <router-outlet></router-outlet> -->
+</div>
+</div>

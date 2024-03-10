@@ -1,0 +1,75 @@
+.container-grid{
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.container-grid-row-1{
+    display: flex;
+    /* justify-content: space-between;
+    flex-direction: row; */
+    /* background-color: rgb(255, 141, 2);  */
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    /* margin: 5px;
+    padding: 5px; */
+     overflow: scroll;
+    /* overflow-x: hidden;
+    overflow-y: hidden;  */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
+}
+.container-grid-row-1::-webkit-scrollbar{
+display: none;
+}
+
+app-filter-and-view-row{
+    width: 100%;
+}
+
+.container-grid-row-2{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    /* background-color: lightblue; */
+
+    /* overflow: scroll; */
+    
+    
+
+}
+.card {
+     display: flex;  
+     /* align-items: center;
+    justify-content: center; */
+    
+    border: 1px solid white;
+    width: auto;
+    height: auto;
+    padding: 10px;
+    margin: 20px;
+    /* box-shadow: 5px 5px 2px rgb(237, 227, 227); */
+    border-radius: 5px;
+    background: rgb(250, 250, 250);
+    box-shadow: 5px 5px 5px rgb(218, 218, 218);
+    /* backdrop-filter: blur(40px); */
+}
+
+.card-btns{
+    display: flex;
+    justify-content: space-around;
+}
+.btn1{
+  
+  flex: .8;
+  background-color: rgba(128, 0, 128, 0.151) ;
+}
+.btn2{
+    flex: 1;
+
+}
+button{
+    margin: 3%;
+    height: 100%;
+    width: 100%;
+}

@@ -1,0 +1,49 @@
+<div class="card-container">
+    <mat-card class="card">
+        <mat-card-header>
+            <h1>{{this.currentCourse.courseName}}</h1>
+        </mat-card-header>
+        <mat-card-content>
+            <h4>{{this.currentCourse.courseDesc}}</h4>
+            <div *ngIf="moduleFetched">
+            <mat-accordion >
+                <mat-expansion-panel  (opened)="getAllModuleTopics(courseModule.id)"  class="mat-expansion-panel" *ngFor="let courseModule of currentCourseModules" >
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{courseModule.moduleTitle}}
+                        </mat-panel-title>
+                        <mat-panel-description>
+                        {{courseModule.moduleDesc}}
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                   
+                    <div *ngIf="topicsFetched">
+      
+                        <mat-card class="mat-card-topic" *ngFor="let topic of currentCourseModulesTopics"  >
+                            <mat-card-header>
+                            <mat-card-title>
+                                {{topic.topicTitle}}
+                            </mat-card-title>
+                            </mat-card-header>
+                            <mat-card-content>
+                                {{topic.topicDesc}}
+    
+                            </mat-card-content>
+                        </mat-card>
+                    
+                    </div>
+                    <div *ngIf="topicsFetched==false">
+                        <i>No topics found for this module</i>
+                    </div>
+                </mat-expansion-panel>
+               
+                
+            </mat-accordion>
+            </div>
+            <div *ngIf="moduleFetched==false">
+                <i>No module found</i>
+            </div>
+        </mat-card-content>
+    </mat-card>
+    
+  </div>

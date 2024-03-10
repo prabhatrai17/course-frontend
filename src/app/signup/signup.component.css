@@ -1,0 +1,86 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    width: 40%;
+    padding: 10px;
+    margin: 20px;
+    box-shadow: 10px 10px 10px rgb(237, 227, 227);
+    border-radius: 10px;
+    background: rgba(10, 10, 11, 0.1);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(40px);
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.card-content{
+ 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    display: block;
+    margin: 10px;
+
+    
+    
+}
+.alert-error{
+    margin-bottom: 20px;
+}
+
+.circle1 {
+    border-radius: 5px;
+    width: 100px;
+    height: 100px;
+    background: rgb(216, 122, 122);
+    position: absolute;
+    left: 60%;
+    top: 160px;
+}
+
+.circle2 {
+    border-radius: 5px;
+    width: 100px;
+    height: 100px;
+    background:rgb(216, 122, 122);
+    position: absolute;
+    left: 23%;
+    top: 22%;
+}
+
+.circle3 {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background: rgba(110, 110, 149, 0.7);
+    position: absolute;
+    left: 33%;
+    bottom: 110px;
+}
+
+.circle4 {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background:rgba(110, 110, 149, 0.7);
+    position: absolute;
+    left: 65%;
+    bottom: 5%;
+}

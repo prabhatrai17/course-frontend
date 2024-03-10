@@ -1,0 +1,38 @@
+.card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+  
+}
+.card{
+   display: flex;
+   justify-content: center;
+    align-items: center;
+    margin: 10px;
+    width: 100%;
+    height: 80%;
+}
+
+.mat-mdc-card-content{
+    width: 90%;
+}
+
+mat-expansion-panel{
+    border: 1px solid rgba(0, 0, 0, 0.182);
+    box-shadow:none!important
+    
+}
+.mat-expanded{
+    /* border: 2px solid rgba(0, 0, 0, 0.182); */
+    background-color: rgba(250, 250, 250, 0.173);
+    
+  background-color:  rgba(128, 0, 128, 0.151) ;
+  box-shadow:5px 0px 5px rgba(128, 0, 128, 0.151)!important
+}
+.mat-card-topic{
+    margin-top: 5px;
+    box-shadow: none;
+    /* border-bottom: 1px dashed rgba(0, 0, 0, 0.182); */
+}

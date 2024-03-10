@@ -1,0 +1,12 @@
+
+<nav class="navbar">
+    <h1 class="navbar-brand">Course Portal</h1>
+<ul class="navbar-list">
+    <li class="navbar-list-item"><a routerLink="/dashboard/allCourses" routerLinkActive="active-link"  ariaCurrentWhenActive="page">Home</a></li>
+    <li *ngIf="loggedInUser=='false'" class="navbar-list-item"><a routerLink="/signup" routerLinkActive="active-link" ariaCurrentWhenActive="page">Signup</a> </li>
+    <li *ngIf="loggedInUser=='false'" class="navbar-list-item"><a routerLink="/login" routerLinkActive="active-link"  ariaCurrentWhenActive="page">Login</a></li>
+    <a routerLink="/cart" routerLinkActive="active-link"><mat-icon  >shopping_cart</mat-icon></a>
+</ul>
+
+
+</nav>

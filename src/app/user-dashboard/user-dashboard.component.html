@@ -1,0 +1,19 @@
+<div class="super-container">
+  
+      
+<div *ngIf="this.loggedUser!='false'" class="main-container">
+<div class="side-container"> 
+    <app-side-bar></app-side-bar>
+</div>
+<div class="container">
+    
+    <router-outlet></router-outlet>
+    
+
+</div>
+</div>
+<div *ngIf="this.loggedUser=='false'">
+    <h1>logged in unsuccessfull</h1>
+    <h2>Try Again</h2>
+    </div>
+</div>

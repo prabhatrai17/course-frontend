@@ -1,0 +1,27 @@
+<div class="filter-sort-view-list">
+    <mat-icon>filter_list</mat-icon>
+    <span>Filter </span>
+    <div class="filter-list">
+        <!-- <span>Filter  </span >
+        <mat-icon>filter_list</mat-icon> -->
+        <div  class="filter-elem" *ngFor="let elem of filterViewArrs" ><span (click)="handleFilter(elem)">{{elem.categoryName}}</span></div>
+    </div>
+    <div class="sort-list"> <mat-icon class="icons">sort</mat-icon>
+        <!-- <span> SortBy </span> -->
+        <div>
+            <button class="sort-button" mat-button [matMenuTriggerFor]="sortmenu">Sort By</button>
+            <mat-menu #sortmenu="matMenu">
+                <button mat-menu-item *ngFor="let sortElem of sortByList" (click)="sortHandle(sortElem)">{{sortElem}}</button>
+        
+            </mat-menu>
+
+        </div>
+    </div>
+    <div class="view-list">
+        <span>| View</span>
+        <div class="view-item" (click)="changeToListView()"><mat-icon >view_list</mat-icon></div>
+        <div class="view-item" (click)="changeToGridView()"> <mat-icon >grid_view</mat-icon></div>
+       
+    </div>
+
+</div>

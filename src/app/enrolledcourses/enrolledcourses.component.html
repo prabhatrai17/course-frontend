@@ -1,0 +1,82 @@
+<div class="container">
+    <mat-card class="card">
+        <mat-card-header>
+            <div class="header-titles">
+                <h2>Courses Enrolled</h2>
+                
+            </div>
+           
+        </mat-card-header>
+        <mat-card-content>
+
+            <mat-tab-group (selectedTabChange)="onSelectedTabChanged($event)">
+                <mat-tab label="Active Courses">
+                    <mat-nav-list *ngIf="enrolledCourseArr.length<=0"><h2>No active Courses Found</h2></mat-nav-list>
+
+                    <mat-nav-list *ngIf="enrolledCourseArr.length>0">
+                        <mat-list-item class="citems" *ngFor="let course of enrolledCourseArr">
+                            <h3 matListItemTitle> {{course.courseName}}</h3>
+                            <p matListItemLine> {{course.courseDifficulty}}</p>
+        
+                            <span matListItemLine class="progress-bar">
+                                Completed 60%
+                                <mat-progress-bar mode="determinate" value="60"></mat-progress-bar>
+                            </span>
+                            <div matListItemMeta>
+                                <div class="meta-items">
+                                    <p> EnrolledOn</p>
+                                    <p> Date</p>
+                               </div>
+                            </div>
+                            <div matListItemMeta>
+                                <div class="meta-items">
+                                    <button mat-flat-button color="accent">Resume</button>
+                                    <button mat-button color="warn">Reset Progress</button>
+                                </div>
+                            </div>
+                        </mat-list-item>
+                        
+        
+                    </mat-nav-list>
+        
+                </mat-tab>
+                <mat-tab label="Inactive Courses" >
+                    <mat-nav-list *ngIf="inactiveCourseArr.length<=0"><h2>No inactive Courses Found</h2></mat-nav-list>
+                    <mat-nav-list *ngIf="inactiveCourseArr.length>0">
+                        <mat-list-item class="citems" *ngFor="let course of inactiveCourseArr">
+                            <h3 matListItemTitle> {{course.courseName}}</h3>
+                            <p matListItemLine> {{course.courseDifficulty}}</p>
+        
+                            <!-- <span matListItemLine class="progress-bar">
+                                Completed 60%
+                                <mat-progress-bar mode="determinate" value="60"></mat-progress-bar>
+                            </span> -->
+                            <div matListItemMeta>
+                                <div class="meta-items">
+                                    <p> Not Enrolled</p>
+                                    
+                               </div>
+                            </div>
+                            <div matListItemMeta>
+                                <div class="meta-items">
+                                    <button mat-flat-button color="accent">Enroll</button>
+                                    <button mat-button color="warn">More Detail</button>
+                                </div>
+                            </div>
+                        </mat-list-item>
+                        
+        
+                    </mat-nav-list>
+                </mat-tab>
+            </mat-tab-group>
+
+            
+            <!-- <button  mat-raised-button color="accent" (click)="handleLogout()">Logout</button> -->
+        </mat-card-content>
+
+        
+        <mat-card-footer>
+
+        </mat-card-footer>
+    </mat-card>
+</div>

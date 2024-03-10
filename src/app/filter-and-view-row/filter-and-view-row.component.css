@@ -1,0 +1,67 @@
+.filter-sort-view-list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid rgb(255, 255, 255);
+    align-items: center;
+}
+
+.filter-list {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    /* background-color: rgb(22, 160, 160); */
+    width: 100%;
+    /* border: 1px solid rgb(243, 243, 243); */
+    /* padding: 5px; */
+    overflow: scroll;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* box-shadow: inset 5px 0 3px 2px  rgb(223, 222, 222),inset -5px 0 3px 2px rgb(212, 211, 211); */
+}
+
+.filter-list::-webkit-scrollbar {
+    display: none;
+}
+
+.sort-list {
+    display: flex;
+    margin-left: 5%;
+    flex: .3;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+
+.view-list {
+    display: flex;
+    flex: .3;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.filter-elem {
+    /* display: inline; */
+    background: rgb(250, 250, 250);
+    border: 1px solid rgba(215, 214, 214, 0.772);
+    border-radius: 5px;
+    padding: 3px 5px 3px 5px;
+    margin: 5px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+/* .icons{
+    margin-top: 10px;
+} */
+.sort-button{
+    border: 1px solid rgb(212, 212, 212);
+}
+.mat-mdc-menu-item {
+    background: rgb(250, 250, 250);
+}
+.view-item{
+    cursor: pointer;
+}

@@ -1,0 +1,82 @@
+<div class="circle1">
+</div>
+<div class="circle2">
+  </div>
+<div class="circle3">
+  </div>
+  <div class="circle4">
+      </div>
+<div class="container">
+
+    <mat-card class="card">
+        <mat-card-header> Kindly Register</mat-card-header>
+        <form class="form" #submit="ngForm" (ngSubmit)="onSubmit(submit)">
+            <mat-card-content class="card-content">
+                <mat-form-field appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input required #name="ngModel" type="text" name="name" matInput placeholder="Enter Full Name" (input)="eventHandle($event)" [(ngModel)]="userSignup.name">
+                    <mat-icon class="material-icons-outlined" matSuffix>person</mat-icon>
+                    <!-- <mat-hint>Full Name</mat-hint> -->
+                </mat-form-field>
+                <div *ngIf="name.invalid &&(name.touched||name.dirty)">
+                    <mat-error *ngIf="name.errors?.['required']" class="alert-error">Name Required</mat-error>
+
+                </div>
+
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input #emailId="ngModel" type="email" name="email" matInput placeholder="Enter your email" (input)="eventHandle($event)" [(ngModel)]="userSignup.email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                    <mat-icon class="material-icons-outlined" matSuffix>email</mat-icon>
+                    <!-- <mat-hint>Full Name</mat-hint> -->
+                </mat-form-field>
+                <div *ngIf="emailId.invalid &&(emailId.touched||emailId.dirty)">
+                    <mat-error *ngIf="emailId.errors?.['required']" class="alert-error">Email Id Required</mat-error>
+                    <mat-error *ngIf="emailId.errors?.['pattern']" class="alert-error">Enter valid email</mat-error>
+                </div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input #passId="ngModel" minlength="6" name="password" type="password" matInput
+                    placeholder="Enter password" (input)="eventHandle($event)" [(ngModel)]="userSignup.pass" required>
+                    <mat-icon class="material-icons-outlined" matSuffix >password</mat-icon>
+                    <mat-hint>Min 6 length: contains type A,a,#,1</mat-hint>
+                    <!-- <mat-hint>A,a,@,#,*,1.</mat-hint> -->
+                </mat-form-field>
+                <div *ngIf="passId.invalid &&(passId.touched||passId.dirty)">
+                    <mat-error *ngIf="passId.errors?.['required']" class="alert-error">Password Required</mat-error>
+                    <!-- <mat-error *ngIf="passId.errors?.['minlength']" class="alert-error">Minimum length 6 is
+                        required</mat-error> -->
+                </div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Select Role</mat-label>
+                    <mat-icon class="material-icons-outlined" matSuffix >account_box</mat-icon>
+                    <mat-select  name="role" #role="ngModel" required [(ngModel)]="userSignup.role" (input)="eventHandle($event)">
+                        <mat-option value="student">Student</mat-option>
+                        <mat-option value="teacher">Teacher</mat-option>
+                        <mat-option value="teacher">Admin</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div *ngIf="role.invalid &&(role.touched||role.dirty)">
+                    <mat-error *ngIf="role.errors?.['required']" class="alert-error">Role
+                        required</mat-error>
+                </div>
+
+                <!-- <mat-form-field class="example-form-field">
+                <mat-label>Clearable input</mat-label>
+                <input matInput type="text" [(ngModel)]="value">
+                <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field> -->
+              <small>By signup I Agree Terms and Privacy Policy.</small>
+
+            </mat-card-content>
+            <mat-card-footer class="card-content">
+                <button [disabled]="emailId.invalid||passId.invalid||role.invalid" class="input" mat-raised-button color="accent" type="submit">Signup</button>
+                <!-- <mat-divider flex></mat-divider> -->
+               <p>Already have an account? <a  routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">Login</a></p> 
+            </mat-card-footer>
+            <mat-error>{{msgFromBackend}}</mat-error>
+        </form>
+    </mat-card>
+</div>
